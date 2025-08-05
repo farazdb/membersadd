@@ -30,7 +30,8 @@ def print_banner():
     print_colored("                           TOOL MADE BY OLD-HACKER", 'green')
     print()
 
-client = TelegramClient('session_name', api_id, api_hash)
+# ✅ Fixed TimeoutError by adding timeout and connection_retries
+client = TelegramClient('session_name', api_id, api_hash, timeout=15, connection_retries=5)
 
 async def main():
     print_banner()
